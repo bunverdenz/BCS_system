@@ -1,8 +1,10 @@
 
-// show first now
-$('.ui.login.modal')
+
+document.getElementById("login").onclick = function(){
+  $('.ui.login.modal')
   .modal('show')
 ;
+}
 
 $('.ui.login.form')
   .form({
