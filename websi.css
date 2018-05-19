@@ -9,6 +9,9 @@
 	margin-left: 217px;
 }
 
+.ui.olive.table {
+border-top: .2em solid #99cd32;
+}
 
 /*upper menu*/
 
@@ -26,9 +29,9 @@
 }
 
 #srchbar{
-	margin-left: 40px;
+	margin-left: 245px;
 }
 
 #srch{
-	width: 500px;
+	width: 515px;
 }

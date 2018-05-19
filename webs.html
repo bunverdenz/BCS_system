@@ -10,9 +10,9 @@
     <link href="./websi.css" rel="stylesheet" >
   </head>
   <body>
+    <div id="wrapper" style="width: 1020px; margin-left: 125px;">
     <div class="ui top fixed borderless menu" id="menu">
-      <div class="item" id="space">
-      </div>
+      <div class="item" id="space" style="width:111px;"></div>
       <a class="item">
         <!-- <img style="height: 50px; width: 60px;" src="logo.png"> -->
         <span id="logo" onclick="window.location = 'index.html'">BCS-Cinema</span>
@@ -30,6 +30,126 @@
           <a class="item" id="logout" style="font-size:17px; color: white">Logout</a>
         </div>
     </div>
+
+    <table style="margin-top: 80px; width:100%; border-collapse: collapse;">
+      <thead>
+        <tr>
+          <th style="border-bottom: 2px solid rgba(0,0,0,.85)"></th>
+          <th style="border-bottom: 2px solid rgba(0,0,0,.85)">
+            <table>
+                <tr>
+                  <th style="color:rgba(0,0,0,.85); width: 75px;">Time</th>
+                  <th style="color:rgba(0,0,0,.85); width: 100px;">Ticket Price:</th>
+                  <th style="color:rgba(0,0,0,.85); width: 78px;">Adult</th>
+                  <th style="color:rgba(0,0,0,.85); width: 78px;">Child</th>
+                  <th style="color:rgba(0,0,0,.85); width: 78px;">Student</th>
+                  <th style="color:rgba(0,0,0,.85)"></th>
+                </tr>
+            </table>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="description" style="width:487px; border-bottom: 2px solid #cccccc;">
+            <table>
+              <tr>
+                <td style="text-align:center;"><i class="big angle up icon"></i><br>1024<br><i class="big angle down icon"></i></td>
+                <td><div class='image' style="margin-left: 5px; margin-top: 8px"><img src="http://www.kino.kz/archive/Avengers_Infinity_War_-_Part_I/p108x159.jpg"></div></td>
+                <td><span style="font-size: 23px; font-weight: bold; color:rgba(0,0,0,.85); margin-left: 10px">Avengers: Infinity War</span></td>
+              </tr>
+            </table>
+          </td>
+          <td style="border-bottom: 2px solid #cccccc;">
+            <table style="width:100%;">
+              <tr>
+                <td style="width: 75px; text-align:center;">10:15</td>
+                <td style="width: 100px; text-align:center;"></td>
+                <td style="width: 78px; text-align:center;">10 000 ₩</td>
+                <td style="width: 78px; text-align:center;">5 000 ₩</td>
+                <td style="width: 78px; text-align:center;">8 000 ₩</td>
+                <td style="padding-left: 30px"><button class="ui positive basic small button" style="color: #99cd32;">Buy</button></td>
+              </tr>
+              <tr>
+                <td style="width: 75px; text-align:center;">15:30</td>
+                <td style="width: 100px; text-align:center;"></td>
+                <td style="width: 78px; text-align:center;">11 000 ₩</td>
+                <td style="width: 78px; text-align:center;">6 000 ₩</td>
+                <td style="width: 78px; text-align:center;">9 000 ₩</td>
+                <td style="padding-left: 30px"><button class="ui positive basic small button" style="color: #99cd32;">Buy</button></td>
+              </tr>
+              <tr>
+                <td style="width: 75px; text-align:center;">23:45</td>
+                <td style="width: 100px; text-align:center;"></td>
+                <td style="width: 78px; text-align:center;">12 000 ₩</td>
+                <td style="width: 78px; text-align:center;">7 000 ₩</td>
+                <td style="width: 78px; text-align:center;">10 000 ₩</td>
+                <td style="padding-left: 30px"><button class="ui positive basic small button" style="color: #99cd32;">Buy</button></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="description" style="width:487px; border-bottom: 2px solid #cccccc;">
+            <table>
+              <tr>
+                <td style="text-align:center;"><i class="big angle up icon"></i><br>579<br><i class="big angle down icon"></i></td>
+                <td><div class='image' style="margin-left: 5px; margin-top: 8px"><img src="http://www.kino.kz/archive/Deadpool_2/p108x159.jpg"></div></td>
+                <td><span style="font-size: 23px; font-weight: bold; color:rgba(0,0,0,.85); margin-left: 10px">Deadpool 2</span></td>
+              </tr>
+            </table>
+          </td>
+          <td style="border-bottom: 2px solid #cccccc;">
+            <table style="width:100%;">
+              <tr>
+                <td style="width: 75px; text-align:center;">10:15</td>
+                <td style="width: 100px; text-align:center;"></td>
+                <td style="width: 78px; text-align:center;">10 000 ₩</td>
+                <td style="width: 78px; text-align:center;">5 000 ₩</td>
+                <td style="width: 78px; text-align:center;">8 000 ₩</td>
+                <td style="padding-left: 30px"><button class="ui positive basic small button" style="color: #99cd32;">Buy</button></td>
+              </tr>
+              <tr>
+                <td style="width: 75px; text-align:center;">15:30</td>
+                <td style="width: 100px; text-align:center;"></td>
+                <td style="width: 78px; text-align:center;">11 000 ₩</td>
+                <td style="width: 78px; text-align:center;">6 000 ₩</td>
+                <td style="width: 78px; text-align:center;">9 000 ₩</td>
+                <td style="padding-left: 30px"><button class="ui positive basic small button" style="color: #99cd32;">Buy</button></td>
+              </tr>
+              <tr>
+                <td style="width: 75px; text-align:center;">23:45</td>
+                <td style="width: 100px; text-align:center;"></td>
+                <td style="width: 78px; text-align:center;">12 000 ₩</td>
+                <td style="width: 78px; text-align:center;">7 000 ₩</td>
+                <td style="width: 78px; text-align:center;">10 000 ₩</td>
+                <td style="padding-left: 30px"><button class="ui positive basic small button" style="color: #99cd32;">Buy</button></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+<!--     <table style="margin-top: 70px">                    
+      <thead>
+        <tr align="left">
+            <th width="480"></th>
+            <th width="80" class="time">Время</th>
+            <th width="180">Формат</th>
+            <th width="70">Язык</th>
+            <th width="70">Взрослый</th>
+            <th width="70">Детский</th>
+            <th width="70">Студент.</th>
+            <th width="70">VIP</th>
+            <th width="100"></th>
+        </tr>
+        </thead>
+    </table> -->
+            
+
+
 
 
 
