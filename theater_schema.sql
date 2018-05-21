@@ -1,4 +1,4 @@
-use theater;
+-- use theater;
 DROP TABLE IF EXISTS tickets;
 DROP TABLE IF EXISTS shows;
 DROP TABLE IF EXISTS seats;
