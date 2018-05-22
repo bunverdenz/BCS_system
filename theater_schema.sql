@@ -1,4 +1,4 @@
--- use theater;
+use theater;
 DROP TABLE IF EXISTS tickets;
 DROP TABLE IF EXISTS shows;
 DROP TABLE IF EXISTS seats;
@@ -19,6 +19,7 @@ CREATE TABLE users (
 CREATE TABLE movies (
     movie_id INTEGER AUTO_INCREMENT PRIMARY KEY,
     movie_title VARCHAR(255) NOT NULL,
+    #image_url VARCHAR(255) NOT NULL,
     director VARCHAR(255) NOT NULL,
     duration INTEGER
 );
@@ -46,13 +47,14 @@ CREATE TABLE seats(
     seat_row INTEGER NOT NULL,
     seat_column VARCHAR(1) NOT NULL,
     hall_id INTEGER NOT NULL,
+    seat_available boolean NOT NULL,
     FOREIGN KEY(hall_id) REFERENCES halls(hall_id)
 );
 
 #DROP TABLE IF EXISTS ticket_type;
 CREATE TABLE ticket_type(
 	type_id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    type_demo VARCHAR(1) NOT NULL,
+    type_demo VARCHAR(16) NOT NULL,
     price INTEGER
 );	
 
@@ -63,7 +65,7 @@ CREATE TABLE tickets(
     user_id INTEGER NOT NULL,
     type_id INTEGER NOT NULL,
     show_id INTEGER NOT NULL,
-    seat_id INTEGER NOT NULL,
+    seat_id INTEGER NOT NULL UNIQUE,
     FOREIGN KEY(user_id) REFERENCES users(user_id),
     FOREIGN KEY(type_id) REFERENCES ticket_type(type_id),
     FOREIGN KEY(show_id) REFERENCES shows(show_id),
