@@ -7,7 +7,7 @@
     <link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css">
-    <link href="./websi.css" rel="stylesheet" >
+    <link href="./websi.css" rel="stylesheet" >  
   </head>
   <body>
     <div id="wrapper" style="width: 1020px; margin-left: 125px;">
@@ -147,12 +147,7 @@
         </tr>
         </thead>
     </table> -->
-            
-
-
-
-
-
+                  
 
     <div class="ui login container">
       <div class="ui login modal form segment">
@@ -168,11 +163,34 @@
     <label>Password</label>
     <input placeholder="Password" type="password" name="password">
   </div>
-  <a style="cursor: pointer;">Don't have an account?</a><br><br>
+  <a id = "signUp" style="cursor: pointer;">Don't have an account?</a><br><br>
      
  <div class = "ui red login cancel basic button">Cancel</div>
  <div class = "ui green login submit basic button">Login</div>         
  <div class="ui login error message"></div>
+
+ <div class="ui signup modal form segment">
+    <i class ="sign up close icon"></i>
+
+    <p>Please, insert the information.</p>
+
+    <div class="field">
+    <label>Username</label>
+    <input placeholder="Username" name="username" type="text">
+    </div>
+    <div class="field">
+    <label>Password</label>
+    <input placeholder="Password" type="password" name="password">
+    </div>
+    <div class="field">
+    <label>Email</label>
+    <input placeholder="Email" type="text" name="email">
+    </div>
+
+    <div class = "ui green login submit basic button">Signup</div>
+    <div class = "ui red login cancel basic button">Cancel</div>             
+    <div class="ui login error message"></div>
+
 
 
   <script src="jquery/js/jquery-1.9.0.min.js"></script>

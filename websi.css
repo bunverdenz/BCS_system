@@ -35,3 +35,49 @@ border-top: .2em solid #99cd32;
 #srch{
 	width: 515px;
 }
+h1 {
+	margin-top: 100px;
+	padding-bottom: 50px;
+	text-align: center;
+}
+/* make it at the center by margin auto*/
+/* #myChair{
+	margin-left: 120px;
+	
+} */
+
+#myChair td {
+	width: 50px;
+	height: 50px;
+}
+
+#myChair td:hover {
+	border: 1px solid grey;
+}
+
+.vertical {
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+.horizontal {
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.center{
+	text-align: center;
+}
+
+.right{
+	float: right;
+}
+.left{
+	float: left;
+}
+.greenBorder{
+	border: 1px solid green;
+}
+.length{
+	width: 340px;
+}

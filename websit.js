@@ -47,3 +47,12 @@ $('.ui.login.modal.form').modal('hide');
   
   }
      });
+
+document.getElementById("signUp").onclick = function(){
+      $('.ui.signup.modal')
+      .modal('show');
+}
+
+
+
+
