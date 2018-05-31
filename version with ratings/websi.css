@@ -1,0 +1,37 @@
+#headers{
+  font-size: 35px;
+  color: rgba(0,0,0,0.85)
+}
+
+#results{
+	width: 900px;
+	margin-top: 75px;
+	margin-left: 217px;
+}
+
+.ui.olive.table {
+border-top: .2em solid #99cd32;
+}
+
+/*upper menu*/
+
+
+
+#menu{
+	background-color: #99cd32;
+}
+
+#logo{
+	font-family: 'Pacifico', Sans-Serif;
+	font-size: 40px;
+	/*font-weight: bold;*/
+	color:white;
+}
+
+#srchbar{
+	margin-left: 245px;
+}
+
+#srch{
+	width: 515px;
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Pacifico">
+    <link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css">
+    <link href="./websi.css" rel="stylesheet" >
+  </head>
+  <body>
+    <div id="wrapper" style="width: 1020px; margin-left: 125px;">
+    <div class="ui top fixed borderless menu" id="menu">
+      <div class="item" id="space" style="width:111px;"></div>
+      <a class="item">
+        <!-- <img style="height: 50px; width: 60px;" src="logo.png"> -->
+        <span id="logo" onclick="window.location = 'index.html'">BCS-Cinema</span>
+      </a>
+      <div class="item" id="srchbar">
+        <div class="ui search">
+          <div class="ui icon input">
+            <input id="srch" class="prompt" type="text" placeholder="Search movie by name...">
+            <i class="search icon"></i>
+          </div>
+        </div>
+    </div>
+        <div class="right menu">
+          <a class="item" id="login" style="font-size:17px; color: white">Log-in</a>
+          <a class="item" id="logout" style="font-size:17px; color: white">Logout</a>
+        </div>
+    </div>
+
+    <table style="margin-top: 80px; width:100%; border-collapse: collapse;">
+      <thead>
+        <tr>
+          <th style="border-bottom: 2px solid rgba(0,0,0,.85)"></th>
+          <th style="border-bottom: 2px solid rgba(0,0,0,.85)">
+            <table>
+                <tr>
+                  <th style="color:rgba(0,0,0,.85); width: 75px;">Time</th>
+                  <th style="color:rgba(0,0,0,.85); width: 100px;">Ticket Price:</th>
+                  <th style="color:rgba(0,0,0,.85); width: 78px;">Adult</th>
+                  <th style="color:rgba(0,0,0,.85); width: 78px;">Child</th>
+                  <th style="color:rgba(0,0,0,.85); width: 78px;">Student</th>
+                  <th style="color:rgba(0,0,0,.85)"></th>
+                </tr>
+            </table>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="description" style="width:487px; border-bottom: 2px solid #cccccc;">
+            <table>
+              <tr>
+                <td style="text-align:center;"></td>
+                <td><div class='image' style="margin-left: 5px; margin-top: 8px"><img src="http://www.kino.kz/archive/Avengers_Infinity_War_-_Part_I/p108x159.jpg"></div></td>
+                <td>
+                  <span style="font-size: 23px; font-weight: bold; color:rgba(0,0,0,.85); margin-left: 10px">Avengers: Infinity War</span><br>
+                  <div class="ui huge star rating" style="margin-left: 7px; margin-top: 7px;" data-max-rating="5"></div><br>
+                  <span style="font-size: 16px; color:rgba(0,0,0,.85); margin-left: 10px"> 4.5 out of 5 stars</span>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td style="border-bottom: 2px solid #cccccc;">
+            <table style="width:100%;">
+              <tr>
+                <td style="width: 75px; text-align:center;">10:15</td>
+                <td style="width: 100px; text-align:center;"></td>
+                <td style="width: 78px; text-align:center;">10 000 ₩</td>
+                <td style="width: 78px; text-align:center;">5 000 ₩</td>
+                <td style="width: 78px; text-align:center;">8 000 ₩</td>
+                <td style="padding-left: 30px"><button class="ui positive basic small button" style="color: #99cd32;">Buy</button></td>
+              </tr>
+              <tr>
+                <td style="width: 75px; text-align:center;">15:30</td>
+                <td style="width: 100px; text-align:center;"></td>
+                <td style="width: 78px; text-align:center;">11 000 ₩</td>
+                <td style="width: 78px; text-align:center;">6 000 ₩</td>
+                <td style="width: 78px; text-align:center;">9 000 ₩</td>
+                <td style="padding-left: 30px"><button class="ui positive basic small button" style="color: #99cd32;">Buy</button></td>
+              </tr>
+              <tr>
+                <td style="width: 75px; text-align:center;">23:45</td>
+                <td style="width: 100px; text-align:center;"></td>
+                <td style="width: 78px; text-align:center;">12 000 ₩</td>
+                <td style="width: 78px; text-align:center;">7 000 ₩</td>
+                <td style="width: 78px; text-align:center;">10 000 ₩</td>
+                <td style="padding-left: 30px"><button class="ui positive basic small button" style="color: #99cd32;">Buy</button></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="description" style="width:487px; border-bottom: 2px solid #cccccc;">
+            <table>
+              <tr>
+                <td style="text-align:center;"></td>
+                <td><div class='image' style="margin-left: 5px; margin-top: 8px"><img src="http://www.kino.kz/archive/Deadpool_2/p108x159.jpg"></div></td>
+                <td>
+                  <span style="font-size: 23px; font-weight: bold; color:rgba(0,0,0,.85); margin-left: 10px">Deadpool 2</span><br>
+                  <div class="ui huge star rating" style="margin-left: 7px; margin-top: 7px;" data-max-rating="5"></div><br>
+                  <span style="font-size: 16px; color:rgba(0,0,0,.85); margin-left: 10px"> 4.5 out of 5 stars</span>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td style="border-bottom: 2px solid #cccccc;">
+            <table style="width:100%;">
+              <tr>
+                <td style="width: 75px; text-align:center;">10:15</td>
+                <td style="width: 100px; text-align:center;"></td>
+                <td style="width: 78px; text-align:center;">10 000 ₩</td>
+                <td style="width: 78px; text-align:center;">5 000 ₩</td>
+                <td style="width: 78px; text-align:center;">8 000 ₩</td>
+                <td style="padding-left: 30px"><button class="ui positive basic small button" style="color: #99cd32;">Buy</button></td>
+              </tr>
+              <tr>
+                <td style="width: 75px; text-align:center;">15:30</td>
+                <td style="width: 100px; text-align:center;"></td>
+                <td style="width: 78px; text-align:center;">11 000 ₩</td>
+                <td style="width: 78px; text-align:center;">6 000 ₩</td>
+                <td style="width: 78px; text-align:center;">9 000 ₩</td>
+                <td style="padding-left: 30px"><button class="ui positive basic small button" style="color: #99cd32;">Buy</button></td>
+              </tr>
+              <tr>
+                <td style="width: 75px; text-align:center;">23:45</td>
+                <td style="width: 100px; text-align:center;"></td>
+                <td style="width: 78px; text-align:center;">12 000 ₩</td>
+                <td style="width: 78px; text-align:center;">7 000 ₩</td>
+                <td style="width: 78px; text-align:center;">10 000 ₩</td>
+                <td style="padding-left: 30px"><button class="ui positive basic small button" style="color: #99cd32;">Buy</button></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+<!--     <table style="margin-top: 70px">                    
+      <thead>
+        <tr align="left">
+            <th width="480"></th>
+            <th width="80" class="time">Время</th>
+            <th width="180">Формат</th>
+            <th width="70">Язык</th>
+            <th width="70">Взрослый</th>
+            <th width="70">Детский</th>
+            <th width="70">Студент.</th>
+            <th width="70">VIP</th>
+            <th width="100"></th>
+        </tr>
+        </thead>
+    </table> -->
+            
+
+
+
+
+
+
+    <div class="ui login container">
+      <div class="ui login modal form segment">
+        <i class ="login close icon"></i>
+
+  <p>Please, log in.</p>
+  
+  <div class="field">
+    <label>Username</label>
+    <input placeholder="Username" name="username" type="text">
+  </div>
+  <div class="field">
+    <label>Password</label>
+    <input placeholder="Password" type="password" name="password">
+  </div>
+  <a style="cursor: pointer;">Don't have an account?</a><br><br>
+     
+ <div class = "ui red login cancel basic button">Cancel</div>
+ <div class = "ui green login submit basic button">Login</div>         
+ <div class="ui login error message"></div>
+
+
+  <script src="jquery/js/jquery-1.9.0.min.js"></script>
+    <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
+    <script src="./websit.js"></script>
+  </body>
+</html>
