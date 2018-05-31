@@ -1,0 +1,11 @@
+{
+  "name": "",
+  "version": "",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "faker": "^4.1.0",
+    "mysql": "^2.15.0",
+    "path": "^0.12.7"
+  }
+}
