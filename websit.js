@@ -1,4 +1,7 @@
-
+$(document).ready(function(){
+    // All your normal JS code goes in here
+    $(".rating").rating();
+});
 
 document.getElementById("login").onclick = function(){
   console.log("Salem")
