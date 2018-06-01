@@ -1,4 +1,5 @@
 use theater;
+DROP TABLE IF EXISTS stars;
 DROP TABLE IF EXISTS tickets;
 DROP TABLE IF EXISTS shows;
 DROP TABLE IF EXISTS seats;
@@ -19,8 +20,7 @@ CREATE TABLE users (
 CREATE TABLE movies (
     movie_id INTEGER AUTO_INCREMENT PRIMARY KEY,
     movie_title VARCHAR(255) NOT NULL,
-    #image_url VARCHAR(255) NOT NULL,
-    director VARCHAR(255) NOT NULL,
+    image_url VARCHAR(255) NOT NULL,
     duration INTEGER
 );
 
@@ -71,4 +71,14 @@ CREATE TABLE tickets(
     FOREIGN KEY(show_id) REFERENCES shows(show_id),
     FOREIGN KEY(seat_id) REFERENCES seats(seat_id)
 );	
+ 
+CREATE TABLE stars(
+	user_id INT NOT NULL,
+    movie_id INT NOT NULL,
+    rating INT NOT NULL,
+    created_at TIMESTAMP DEFAULT NOW(),
+    FOREIGN KEY(user_id) references users(user_id),
+    FOREIGN KEY(movie_id) references movies(movie_id),
+    PRIMARY KEY(user_id, movie_id)
 
+);	

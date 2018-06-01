@@ -2,7 +2,8 @@
 var mysql = require('mysql');
 var express = require('express');
 var path = require('path');
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+var faker = require('faker');
 var app = express();
 // Express Middleware for serving static files
 app.use(express.static(__dirname + "/public"));
@@ -44,17 +45,24 @@ app.get("/select_seat", function(req, res){
 
 app.post("/register", function(req, res){
 	console.log(req.body);
-	res.send("Thank you for register.")
-	//console.log("post request sent here "+ req.body.email);
-	
+
+	//real input
 	// var person = {
- //             email: req.body.email
- //    };
- //    //var q = "INSERT INTO users (email) VALUES (" + req.body.email + ")"
- // 	connection.query('INSERT INTO users SET ?',person ,function(error, results){
- //      	if(error) throw error;
- //      	res.redirect("/");
- //  	});
+	// 	usersname: req.body.email,
+	// 	password: req.body.password,
+	// 	email:  req.body.email
+	// };
+
+	//fake input
+
+	var q = "INSERT INTO users (username, user_password, user_email) VALUES ('" + faker.internet.userName() + "','"+ faker.internet.password() +"','" +faker.internet.email() +"');"
+	console.log(q)
+
+	connection.query(q, function(err, results){
+	 	console.log(results);
+	 });
+
+	res.redirect("/")
 });
 
 app.get("/joke", function(req, res){
