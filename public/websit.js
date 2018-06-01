@@ -3,13 +3,13 @@ $(document).ready(function(){
     $(".rating").rating();
 });
 
+
 document.getElementById("login").onclick = function(){
   console.log("Salem")
   $('.ui.login.modal')
   .modal('show')
 ;
 }
-
 $('.ui.login.form')
   .form({
     fields: {

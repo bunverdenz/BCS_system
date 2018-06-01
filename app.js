@@ -1,3 +1,4 @@
+//BCS
 var mysql = require('mysql');
 var express = require('express');
 var path = require('path');
@@ -12,7 +13,7 @@ app.set("view engine","ejs");
 var connection = mysql.createConnection({
 	host : 'localhost',
 	user : 'root',
-	password : '',
+	password : 'chi1758910',
 	database : 'theater'
 });
 
@@ -21,15 +22,17 @@ var connection = mysql.createConnection({
 app.get("/", function(req, res){
 	console.log('first page');
 
-	var q = "SELECT * FROM users;";
-	// connection.query(q, function(err, results){
+	var q = "SELECT COUNT(*) as count FROM users;";
+	 connection.query(q, function(err, results){
+	 	console.log(results[0].count);
+	 	var num = results[0].count;
 	// 	if (err) throw err;
 	// 	//var count = results[0].count;
 	// 	//need to be inside. If it is outside then 
 	// 	//it may call res.send(..) before get count
 	// 	//res.send("We have " + count + " users in our db.");
-		res.render("webs");
-	// });
+		res.render("webs", {data: num});
+	 });
 
 });
 app.get("/select_seat", function(req, res){
@@ -40,6 +43,9 @@ app.get("/select_seat", function(req, res){
 });
 
 app.post("/register", function(req, res){
+	console.log(req.body);
+	res.send("Thank you for register.")
+	//console.log("post request sent here "+ req.body.email);
 	
 	// var person = {
  //             email: req.body.email
@@ -52,9 +58,9 @@ app.post("/register", function(req, res){
 });
 
 app.get("/joke", function(req, res){
-	// var joke = "What the <em>FUCK???</em>"
-	// res.send(joke);
-	// console.log("request joke")
+	var joke = "What the <em>FUCK???</em>"
+	 res.send(joke);
+	 console.log("request joke")
 })
 
 app.get("/random_num", function(req, res){
