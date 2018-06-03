@@ -42,11 +42,11 @@ app.get("/", function(req, res){
 });
 
 // @Shynar
-app.post('/',function(req,res){
+app.post('/websloggedin',function(req,res){
   var rank=req.body.rating;
   console.log("ranking is "+rank);
-  res.redirect("/ticketPurchase");
   // res.end("yes");
+  res.render("websloggedin");
 });  
 
 app.get("/websloggedin", function(req, res){
