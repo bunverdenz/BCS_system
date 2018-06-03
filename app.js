@@ -57,9 +57,9 @@ app.get("/select_seat", function(req, res){
 });
 
 app.post("/login", function(req, res){
-	console.log("heyyyyyyy");
 	var body = req.body;
-	
+	console.log(req.body)
+
 	var q = "SELECT * FROM users;"
 	 connection.query(q, function(err, results){
 		console.log(results[0].username);
