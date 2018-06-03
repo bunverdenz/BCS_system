@@ -20,9 +20,9 @@ $(document).ready(function(){
 });
 
 
-document.getElementById("logout").onclick = function(){
-  console.log("Salem")
-}
+// document.getElementById("logout").onclick = function(){
+//   console.log("Salem")
+// }
 
 document.getElementById("b110").onclick = function(){
   console.log("ENTERS")
