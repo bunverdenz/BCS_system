@@ -42,11 +42,23 @@ app.get("/", function(req, res){
 });
 
 // @Shynar
-app.post('/websloggedin',function(req,res){
+app.post('/websloggedin1',function(req,res){
   var rank=req.body.rating;
   console.log("ranking is "+rank);
+  var mvid = req.body.mvid;
+  console.log("ranking is "+mvid);
   // res.end("yes");
-  res.render("websloggedin");
+  var q = "SELECT user_id FROM users WHERE username = '"+ user_login +"';";
+	connection.query(q, function(err, results){
+	console.log(results)
+	var q1 = "INSERT INTO stars( user_id, movie_id, rating) VALUES (1, 1, 5);";
+	// connection.query(q1, function(err, results1){
+	// 	if (err) throw err;
+	//  });	
+	if (err) throw err;
+	res.render("websloggedin");
+	 });
+  
 });  
 
 app.get("/websloggedin", function(req, res){
