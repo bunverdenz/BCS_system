@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 var connection = mysql.createConnection({
 	host : 'localhost',
 	user : 'root',
-	password : '',
+	password : 'happytedy',
 	database : 'theater'
 });
 
@@ -47,7 +47,24 @@ app.post('/',function(req,res){
   console.log("ranking is "+rank);
   res.redirect("/ticketPurchase");
   // res.end("yes");
-});     
+});  
+
+app.get("/websloggedin", function(req, res){
+	console.log('second page');
+	 res.render("websloggedin");
+});
+
+app.post('/websloggedin',function(req,res){
+  var name=req.body.movie_name;
+  console.log("movie is "+name);
+  var time=req.body.time;
+  console.log("time is "+time);
+  // res.render("ticketPurchase", {mvname: name, mvtime: time})
+  res.render("ticketPurchase")
+  // res.end("yes");
+});    
+
+
 
 app.get("/select_seat", function(req, res){
 	console.log('select_seat');

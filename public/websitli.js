@@ -23,3 +23,8 @@ $(document).ready(function(){
 document.getElementById("logout").onclick = function(){
   console.log("Salem")
 }
+
+document.getElementById("b110").onclick = function(){
+  console.log("ENTERS")
+  $.post("http://localhost:8080/websloggedin",{movie_name:"Deadpool 2" ,time: "10:00"})
+}
