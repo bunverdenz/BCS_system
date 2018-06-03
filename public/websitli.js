@@ -1,17 +1,60 @@
 $(document).ready(function(){
     // All your normal JS code goes in here
-    $('.ui.rating').rating({
+    $('.ui.rating.1').rating({
       initialRating: 0,
       maxRating: 5,
       clearable: true,
       onRate: function(value) {
         console.log('value set to:' + value);
-         $.post("http://localhost:8080/websloggedin",{rating: value}).then(function(data) {
+         $.post("http://localhost:8080/websloggedin1",{rating: value, mvid: 1}).then(function(data) {
         window.location = "http://localhost:8080/websloggedin";
     });
       },
     });
-      
+    $('.ui.rating.2').rating({
+      initialRating: 0,
+      maxRating: 5,
+      clearable: true,
+      onRate: function(value) {
+        console.log('value set to:' + value);
+         $.post("http://localhost:8080/websloggedin1",{rating: value, mvid: 2}).then(function(data) {
+        window.location = "http://localhost:8080/websloggedin";
+    });
+      },
+    });
+    $('.ui.rating.3').rating({
+      initialRating: 0,
+      maxRating: 5,
+      clearable: true,
+      onRate: function(value) {
+        console.log('value set to:' + value);
+         $.post("http://localhost:8080/websloggedin1",{rating: value, mvid: 3}).then(function(data) {
+        window.location = "http://localhost:8080/websloggedin";
+    });
+      },
+    });
+    $('.ui.rating.4').rating({
+      initialRating: 0,
+      maxRating: 5,
+      clearable: true,
+      onRate: function(value) {
+        console.log('value set to:' + value);
+         $.post("http://localhost:8080/websloggedin1",{rating: value, mvid: 4}).then(function(data) {
+        window.location = "http://localhost:8080/websloggedin";
+    });
+      },
+    }); 
+    $('.ui.rating.5').rating({
+      initialRating: 0,
+      maxRating: 5,
+      clearable: true,
+      onRate: function(value) {
+        console.log('value set to:' + value);
+         $.post("http://localhost:8080/websloggedin1",{rating: value, mvid: 5}).then(function(data) {
+        window.location = "http://localhost:8080/websloggedin";
+    });
+      },
+    }); 
 });
 
 
