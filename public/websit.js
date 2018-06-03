@@ -14,11 +14,7 @@ $(document).ready(function(){
 });
 
 
-document.getElementById("login").onclick = function(){
-  $('.ui.login.modal')
-  .modal('show')
-;
-}
+
 $('.ui.login.form')
   .form({
     fields: {
