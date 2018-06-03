@@ -144,7 +144,7 @@ VALUES (1, 1, 1, 1);
 
 #example value for stars
 INSERT INTO stars( user_id, movie_id, rating) 
-VALUES (1, 1, 5);
+VALUES (8, 1, 5);
 INSERT INTO stars( user_id, movie_id, rating) 
 VALUES (2, 1, 4);
 INSERT INTO stars( user_id, movie_id, rating) 
@@ -152,7 +152,7 @@ VALUES (3, 1, 5);
 INSERT INTO stars( user_id, movie_id, rating) 
 VALUES (4, 2, 3);
 INSERT INTO stars( user_id, movie_id, rating) 
-VALUES (1, 2, 5);
+VALUES (8, 2, 5);
 INSERT INTO stars( user_id, movie_id, rating) 
 VALUES (2, 3, 4);
 INSERT INTO stars( user_id, movie_id, rating) 

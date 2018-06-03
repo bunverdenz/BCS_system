@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 var connection = mysql.createConnection({
 	host : 'localhost',
 	user : 'root',
-	password : '',
+	password : 'chi1758910',
 	database : 'theater'
 });
 
@@ -56,14 +56,14 @@ app.post('/websloggedin1',function(req,res){
 	// 	if (err) throw err;
 	//  });	
 	if (err) throw err;
-	res.render("websloggedin");
+	res.render("websloggedin", {data: user_login});
 	 });
   
 });  
 
 app.get("/websloggedin", function(req, res){
 	console.log('second page');
-	 res.render("websloggedin");
+	res.render("websloggedin", {data: user_login});
 });
 
 var mvname = null
