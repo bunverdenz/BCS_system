@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 var connection = mysql.createConnection({
 	host : 'localhost',
 	user : 'root',
-	password : 'happytedy',
+	password : '',
 	database : 'theater'
 });
 
@@ -65,6 +65,18 @@ app.post('/websloggedin',function(req,res){
 });    
 
 
+app.post("/ticketBuy", function(req, res){
+	// console.log(req);
+	var q = "UPDATE seats as s SET s.seat_available = false WHERE s.seat_id = 1;";
+	
+	var q = "INSERT INTO tickets (user_id, type_id, show_id,seat_id) VALUES ('" + req.body.user_id + "','"+ req.body.type_id +"','" +req.body.show_id+"','" +req.body.seat_id +"');"
+
+	connection.query(q, function(err, results){
+	 	console.log(results);
+	 });
+
+	res.redirect("/")
+});
 
 app.get("/select_seat", function(req, res){
 	console.log('select_seat');
@@ -76,7 +88,7 @@ app.get("/select_seat", function(req, res){
 app.post("/login", function(req, res){
 	var body = req.body;
 	console.log(req.body)
-
+	var user_login = null;
 	var q = "SELECT * FROM users;"
 	 connection.query(q, function(err, results){
 		console.log(results[0].username);
@@ -85,10 +97,12 @@ app.post("/login", function(req, res){
 		console.log(body.password);
 		var rows = results;	  
 		var chk = false; 
+		
 		rows.forEach( (row) => {
 			if(row.username == body.username && row.user_password == body.password){
 				console.log("FOUND it!");
 				chk = true;
+				user_login= row.username;
 			}
 			
 		  });
@@ -103,7 +117,7 @@ app.post("/login", function(req, res){
 	});
 
 
-	res.redirect("/")
+	res.render("websloggedin",{data:user_login});
 });
 
 app.post("/register", function(req, res){

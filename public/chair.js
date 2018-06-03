@@ -84,13 +84,13 @@ var myChair = document.getElementById("myChair");
 
 function clickfunc(obj,id){
     if(obj.id =='adult'){
-
+      $("#price").val("10,000");
     }
     else if(obj.id =='student'){
-       
+      $("#price").val("8,000");
     }
     else if(obj.id =='child'){
-       
+      $("#price").val("6,000");
     }
     $(id).addClass("greenBorder");
     console.log("hey");

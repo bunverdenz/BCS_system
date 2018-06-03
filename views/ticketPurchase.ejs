@@ -43,72 +43,49 @@
                 <div id="screen">            
                 </div>
         </div>
-        
-        <div class="right">
-            <h3>
-              Details
-            </h3>
-            <div>
-              Time:<br></br>
-              Hall:<br></br>
-              Movie Name:<br></br>
-              
-          
-            
-
-            <div class="ui menu">                
-                <a class="item">
-                  <i class="cart icon"></i>
-                  Checkout
-                </a>
-                <div class ="length">
-
-                  </div>
-              </div>
-              <div class="ui teal button" data-title="Do you want to submit now?" >Submit</div>
-
-              <!-- <div class="ui button">Show flowing popup</div>
-<div class="ui flowing popup top left transition hidden">
-  <div class="ui three column divided center aligned grid">
-    <div class="column">
-      <h4 class="ui header">Basic Plan</h4>
-      <p><b>2</b> projects, $10 a month</p>
-      <div class="ui button">Choose</div>
-    </div>
-    <div class="column">
-      <h4 class="ui header">Business Plan</h4>
-      <p><b>5</b> projects, $20 a month</p>
-      <div class="ui button">Choose</div>
-    </div>
-    <div class="column">
-      <h4 class="ui header">Premium Plan</h4>
-      <p><b>8</b> projects, $25 a month</p>
-      <div class="ui button">Choose</div>
-    </div>
-  </div>
-</div>
-
-<div class="ui button">Show flowing popup</div>
-<div class="ui flowing popup top left transition hidden">
-  <div class="ui three column divided center aligned grid">
-    <div class="column">
-      <h4 class="ui header">Basic Plan</h4>
-      <p><b>2</b> projects, $10 a month</p>
-      <div class="ui button">Choose</div>
-    </div>
-    <div class="column">
-      <h4 class="ui header">Business Plan</h4>
-      <p><b>5</b> projects, $20 a month</p>
-      <div class="ui button">Choose</div>
-    </div>
-    <div class="column">
-      <h4 class="ui header">Premium Plan</h4>
-      <p><b>8</b> projects, $25 a month</p>
-      <div class="ui button">Choose</div>
-    </div>
-  </div>
-</div> -->
-        </div>
+        <form method = "POST" action = "/ticketBuy"></form>
+            <div class="right">
+                <h3>
+                  Details
+                </h3>
+                <div>
+                  Time:
+                  <label>
+                    <input id="time" placeholder="time" name="time">            
+                  </label>
+                  <br></br>
+                  Hall:
+                  <label>
+                    <input id="hall" placeholder="hall" name="hall">            
+                  </label>
+                  <br></br>
+                  Movie Name:
+                  <label>
+                    <input id="movie" placeholder="movie" name="movie">            
+                  </label>
+                  <br></br>
+                  Seat:
+                  <label>
+                    <input id="seat" placeholder="seat" name="seat">            
+                  </label>
+                  <!-- need userId for form too!!  -->
+                  <br></br>
+                    <div class="ui menu">                
+                      <a class="item">
+                        <i class="cart icon"></i>
+                        Total Price
+                      </a>
+                        <div class ="length">
+                        
+                          <label></label>
+                          <input id="price" placeholder="Price" name="Price">
+                        
+                        </div>
+                    </div>
+                    <div><button class="ui teal submit button" data-title="Do you want to submit now?" >Submit</button></div>
+                
+            </div>
+        </form>
     </div>
     
     <div class="ui login container">
