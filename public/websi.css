@@ -53,7 +53,7 @@ h1 {
 }
 
 #myChair td:hover {
-	border: 1px solid grey;
+	border: 1px solid greenyellow;
 }
 
 .vertical {
@@ -78,7 +78,7 @@ h1 {
 }
 .greenBorder{
 	
-	border: solid green;
+	border: solid rgb(0, 0, 0);
 }
 .length{
 	width: 340px;

@@ -51,7 +51,9 @@ function clickfunc(obj,id1){
       $("#price").val(k+old);
       $("#seat").val("Child row:"+id1.getAttribute('id').charAt(3)+" column:"+id1.getAttribute('id').charAt(8)+"\n"+oldSeat);
     }
-    $(id1).addClass("greenBorder");
+    $("#colorButton"+id1.getAttribute('id')).removeClass("ui button");
+    $("#colorButton"+id1.getAttribute('id')).addClass("ui green button");
+    $("#colorButton"+id1.getAttribute('id')).css("background-color","#99cd32");
     console.log("hey");
   // $("#container").html(result);
 }
@@ -69,7 +71,7 @@ for(var i=0;i<5;i++){
        
         var str1 = "row"+i+"cell"+j;                                                     
         cell.id = str1;
-        var result = "<div class='ui button'><img style='width:50px; height: 50px;' src='" + str + "'></div>"+
+        var result = "<div id='colorButton"+str1+"' class='ui button'><img style='width:50px; height: 50px;' src='" + str + "'></div>"+
         "<div class='ui flowing popup top left transition hidden'>"+
           "<div class='ui three column divided center aligned grid'>"+
             "<div class='column'>"+
