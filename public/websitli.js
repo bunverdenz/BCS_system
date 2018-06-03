@@ -26,5 +26,7 @@ document.getElementById("logout").onclick = function(){
 
 document.getElementById("b110").onclick = function(){
   console.log("ENTERS")
-  $.post("http://localhost:8080/websloggedin",{movie_name:"Deadpool 2" ,time: "10:00"})
+  $.post("http://localhost:8080/websloggedin",{movie_name:"Deadpool 2" ,time: "10:00"}).then(function(data) {
+        window.location = "http://localhost:8080/ticketPurchase";
+    });
 }

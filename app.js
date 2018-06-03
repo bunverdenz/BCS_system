@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 var connection = mysql.createConnection({
 	host : 'localhost',
 	user : 'root',
-	password : '',
+	password : 'happytedy',
 	database : 'theater'
 });
 
@@ -54,14 +54,17 @@ app.get("/websloggedin", function(req, res){
 	 res.render("websloggedin");
 });
 
+var mvname = null
+var mvtime = null
+
 app.post('/websloggedin',function(req,res){
-  var name=req.body.movie_name;
-  console.log("movie is "+name);
-  var time=req.body.time;
-  console.log("time is "+time);
-  // res.render("ticketPurchase", {mvname: name, mvtime: time})
-  res.render("ticketPurchase")
+  mvname=req.body.movie_name;
+  console.log("movie is "+mvname);
+  mvtime=req.body.time;
+  console.log("time is "+mvtime);
   // res.end("yes");
+  res.render("ticketPurchase", {mvname: mvname, mvtime: mvtime})
+
 });    
 
 
@@ -78,12 +81,13 @@ app.post("/ticketBuy", function(req, res){
 	res.redirect("/")
 });
 
-app.get("/select_seat", function(req, res){
-	console.log('select_seat');
-	var joke = "<em>select_seat</em>"
-	res.render("ticketPurchase");
-
+app.get("/ticketPurchase", function(req, res){
+	console.log('second page');
+	res.render("ticketPurchase", {mvname: mvname, mvtime: mvtime})
+	 // res.render("ticketPurchase")
 });
+
+
 
 app.post("/login", function(req, res){
 	var body = req.body;
