@@ -146,4 +146,20 @@ VALUES (2, 1, 4);
 INSERT INTO stars( user_id, movie_id, rating) 
 VALUES (3, 1, 5);
 INSERT INTO stars( user_id, movie_id, rating) 
-VALUES (4, 1, 3);
+VALUES (4, 2, 3);
+INSERT INTO stars( user_id, movie_id, rating) 
+VALUES (1, 2, 5);
+INSERT INTO stars( user_id, movie_id, rating) 
+VALUES (2, 3, 4);
+INSERT INTO stars( user_id, movie_id, rating) 
+VALUES (3, 4, 5);
+INSERT INTO stars( user_id, movie_id, rating) 
+VALUES (4, 5, 3);
+INSERT INTO stars( user_id, movie_id, rating) 
+VALUES (2, 2, 5);
+INSERT INTO stars( user_id, movie_id, rating) 
+VALUES (2, 5, 4);
+INSERT INTO stars( user_id, movie_id, rating) 
+VALUES (5, 1, 5);
+INSERT INTO stars( user_id, movie_id, rating) 
+VALUES (6, 5, 3);
