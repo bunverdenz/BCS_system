@@ -88,21 +88,29 @@ app.post("/ticketBuy", function(req, res){
 	var row = parseInt(str.charAt(str.indexOf("row")+4),10)+1;
 	var col = (parseInt(str.charAt(str.indexOf("column")+7)))*5;
 	var type_id = str.split(" ")[0];
+	console.log("here1");
 	console.log(row+col);
+	console.log(type_id);
 	var q = "UPDATE seats as s SET s.seat_available = false WHERE s.seat_id = "+(row+col) +";";
 	connection.query(q, function(err, results){
+		console.log("here2");
 		console.log(results);
 	});
-	var a = "SELECT user_id FROM users WHERE username = "+ user_login+";";
+	console.log("here3");
+	var a = "SELECT user_id FROM users WHERE username = '"+ user_login+"';";
 	connection.query(a, function(err, results){
-		
-		var b = "SELECT show_id FROM shows WHERE s.show_time = '2018-05-20 10:00:00';";
+		console.log("here4");
+		console.log(results);
+		var b = "SELECT show_id FROM shows WHERE show_time = '2018-05-20 10:00:00';";
 		connection.query(b, function(err, results1){
+			console.log("here5");
 			console.log(results1);
+			console.log(results[0].user_id);
 			var q = "INSERT INTO tickets (user_id, type_id, show_id,seat_id) VALUES ('" + results[0].user_id + "','"+ type_id +"','" +results1[0].show_id+"','" +req.body.seat_id +"');"
 
-			connection.query(q, function(err, results){
+			connection.query(q, function(err, results2){
 			console.log("finall");
+			console.log(results2);
 		});
 		});
 
