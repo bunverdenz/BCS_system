@@ -6,14 +6,9 @@ $(document).ready(function(){
       clearable: true,
       onRate: function(value) {
         console.log('value set to:' + value);
-         $.post("http://localhost:8080/",{rating: value}, function(data){
-          // window.location.href = "http://localhost:8080/"
-            // if(data==='done')
-            //   {
-            //     alert("rating success");
-            //     // window.location.assign('/')
-            //   }
-          });
+         $.post("http://localhost:8080/websloggedin",{rating: value}).then(function(data) {
+        window.location = "http://localhost:8080/websloggedin";
+    });
       },
     });
       
