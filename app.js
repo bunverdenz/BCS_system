@@ -44,7 +44,7 @@ app.get("/select_seat", function(req, res){
 });
 
 app.post("/register", function(req, res){
-	console.log(req.body);
+	console.log(req);
 
 	//real input
 	// var person = {
@@ -52,10 +52,10 @@ app.post("/register", function(req, res){
 	// 	password: req.body.password,
 	// 	email:  req.body.email
 	// };
+	var q = "INSERT INTO users (username, user_password, user_email) VALUES ('" + req.body.username + "','"+ req.body.password +"','" +req.body.email +"');"
 
 	//fake input
-
-	var q = "INSERT INTO users (username, user_password, user_email) VALUES ('" + faker.internet.userName() + "','"+ faker.internet.password() +"','" +faker.internet.email() +"');"
+	// var q = "INSERT INTO users (username, user_password, user_email) VALUES ('" + faker.internet.userName() + "','"+ faker.internet.password() +"','" +faker.internet.email() +"');"
 	console.log(q)
 
 	connection.query(q, function(err, results){
@@ -76,6 +76,7 @@ app.get("/random_num", function(req, res){
 	// res.send("Your lucky number is " + num);
 
 })
+
 
 app.listen(8080, function(){
 	console.log('Server running on 8080');
