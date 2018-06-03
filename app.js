@@ -27,7 +27,7 @@ app.get("/", function(req, res){
 
 	var q = "SELECT*FROM movies;";
 	 connection.query(q, function(err, results){
-	 	console.log(results);
+	 	
 		 //var num = results[0].count;
 
 	

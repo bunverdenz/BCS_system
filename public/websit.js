@@ -4,13 +4,17 @@ $(document).ready(function(){
       initialRating: 0,
       maxRating: 5,
       clearable: true,
+      onRate: function(value) {
+          $('.ui.login.modal')
+            .modal('show')
+          ;
+      },
     });
       
 });
 
 
 document.getElementById("login").onclick = function(){
-  console.log("Salem")
   $('.ui.login.modal')
   .modal('show')
 ;
@@ -60,6 +64,13 @@ document.getElementById("signUp").onclick = function(){
       $('.ui.signup.modal')
       .modal('show');
 }
+
+$('.ui.positive.basic.small.button').click(function(){
+  console.log("I am here")
+  $('.ui.login.modal')
+            .modal('show')
+          ;
+})
 
 
 
