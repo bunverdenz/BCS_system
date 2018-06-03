@@ -1,7 +1,7 @@
 
 #example data of users
 INSERT INTO users(username, user_password, user_email)
-VALUES ("chitipat", "1234","hello@gmail.com");
+VALUES ("Chitipat", "1234","hello@gmail.com");
 INSERT INTO users(username, user_password, user_email)
 VALUES ("David", "2222","David@gmail.com");
 INSERT INTO users(username, user_password, user_email)
