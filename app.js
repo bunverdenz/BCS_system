@@ -75,17 +75,28 @@ app.post("/ticketBuy", function(req, res){
 	var str = req.body.seat;
 	var row = parseInt(str.charAt(str.indexOf("row")+4),10)+1;
 	var col = (parseInt(str.charAt(str.indexOf("column")+7)))*5;
+	var type_id = str.split(" ")[0];
 	console.log(row+col);
 	var q = "UPDATE seats as s SET s.seat_available = false WHERE s.seat_id = "+(row+col) +";";
 	connection.query(q, function(err, results){
 		console.log(results);
 	});
-	var a = "SELECT user_id FROM users WHERE username = "+ +";";
-	var q = "INSERT INTO tickets (user_id, type_id, show_id,seat_id) VALUES ('" + req.body.user_id + "','"+ req.body.type_id +"','" +req.body.show_id+"','" +req.body.seat_id +"');"
+	var a = "SELECT user_id FROM users WHERE username = "+ user_login+";";
+	connection.query(a, function(err, results){
+		
+		var b = "SELECT show_id FROM shows WHERE s.show_time = '2018-05-20 10:00:00';";
+		connection.query(b, function(err, results1){
+			console.log(results1);
+			var q = "INSERT INTO tickets (user_id, type_id, show_id,seat_id) VALUES ('" + results[0].user_id + "','"+ type_id +"','" +results1[0].show_id+"','" +req.body.seat_id +"');"
 
-	connection.query(q, function(err, results){
-		console.log(results);
+			connection.query(q, function(err, results){
+			console.log("finall");
+		});
+		});
+
+		
 	});
+	
 	// connection.query(q, function(err, results){
 	//  	console.log(results);
 	//  });
