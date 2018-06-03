@@ -27,18 +27,22 @@ $('.menu .browse')
     }
   })
 ;
-
+$("#price").val(0);
 var myChair = document.getElementById("myChair");
 
 function clickfunc(obj,id){
-    if(obj.id =='adult'){
-      $("#price").val("10,000");
+  var old = parseInt($('#price').val(), 10);  
+    if(obj.id =='adult'){      
+      var k = parseInt("10000");
+      $("#price").val(k+old);
     }
     else if(obj.id =='student'){
-      $("#price").val("8,000");
+      var k = parseInt("8000");
+      $("#price").val(k+old);
     }
     else if(obj.id =='child'){
-      $("#price").val("6,000");
+      var k = parseInt("6000");
+      $("#price").val(k+old);
     }
     $(id).addClass("greenBorder");
     console.log("hey");
@@ -55,7 +59,7 @@ for(var i=0;i<5;i++){
         img.src = "https://cdn3.iconfinder.com/data/icons/movie-entertainment-flat-style/64/13_seat-movie-cinema-chair-theater-512.png";
         img.style.width = "50px";
         img.style.height = "50px";
-        
+       
         var str1 = "row"+i+"cell"+j;                                                     
         cell.id = str1;
         var result = "<div class='ui button'><img style='width:50px; height: 50px;' src='" + str + "'></div>"+
