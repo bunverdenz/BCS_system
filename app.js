@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 var connection = mysql.createConnection({
 	host : 'localhost',
 	user : 'root',
-	password : 'chi1758910',
+	password : 'happytedy',
 	database : 'theater'
 });
 
@@ -25,9 +25,9 @@ var connection = mysql.createConnection({
 app.get("/", function(req, res){
 	console.log('first page');
 
-	var q = "SELECT m.movie_title, m.image_url, m.duration, s.show_time, t.type_demo, t.price FROM movies as m INNER JOIN shows as s ON m.movie_id = s.movie_id INNER JOIN ticket_type as t;";
+	var q = "SELECT*FROM movies;";
 	 connection.query(q, function(err, results){
-	 	//console.log(results);
+	 	console.log(results);
 		 //var num = results[0].count;
 
 	
