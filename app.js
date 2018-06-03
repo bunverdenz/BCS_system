@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 var connection = mysql.createConnection({
 	host : 'localhost',
 	user : 'root',
-	password : 'chi1758910',
+	password : '',
 	database : 'theater'
 });
 
@@ -63,10 +63,13 @@ app.post("/login", function(req, res){
 	var q = "SELECT * FROM users;"
 	 connection.query(q, function(err, results){
 		console.log(results[0].username);
+		console.log(results[0].user_password);
+		console.log(body.username);
+		console.log(body.password);
 		var rows = results;	  
 		var chk = false; 
 		rows.forEach( (row) => {
-			if(row.username == body.username && row.password == body.password){
+			if(row.username == body.username && row.user_password == body.password){
 				console.log("FOUND it!");
 				chk = true;
 			}
