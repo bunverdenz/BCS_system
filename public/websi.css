@@ -83,3 +83,8 @@ h1 {
 .length{
 	width: 340px;
 }
+input
+{
+    background: transparent;
+    border: none;
+}
