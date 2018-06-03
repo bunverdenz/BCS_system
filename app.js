@@ -88,11 +88,11 @@ app.get("/ticketPurchase", function(req, res){
 });
 
 
-
+var user_login = "Meh";
 app.post("/login", function(req, res){
 	var body = req.body;
 	console.log(req.body)
-	var user_login = null;
+	
 	var q = "SELECT * FROM users;"
 	 connection.query(q, function(err, results){
 		console.log(results[0].username);
@@ -112,6 +112,7 @@ app.post("/login", function(req, res){
 		  });
 		if(chk==true){
 			console.log("Successfully login");
+			res.render("websloggedin",{data:user_login});
 			// alert("Successfully login");
 		}
 		else{
@@ -119,9 +120,6 @@ app.post("/login", function(req, res){
 			// alert("Login Fail, not in database");
 		}
 	});
-
-
-	res.render("websloggedin",{data:user_login});
 });
 
 app.post("/register", function(req, res){
