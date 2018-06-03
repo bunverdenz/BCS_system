@@ -42,6 +42,10 @@ INSERT INTO movies(movie_title, image_url, duration)
 VALUES("Peter Rabbit",
 		"https://d32qys9a6wm9no.cloudfront.net/images/movies/poster/c0/8f35257aec34e35b86b840153f49b77e_300x442.jpg",
         94);
+INSERT INTO movies(movie_title, image_url, duration)
+VALUES("Early Man",
+		"https://d32qys9a6wm9no.cloudfront.net/images/movies/poster/99/441503dc69c52ce948bf305ff6972bad_300x442.jpg",
+        89);
 
 
 

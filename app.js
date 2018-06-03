@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 var connection = mysql.createConnection({
 	host : 'localhost',
 	user : 'root',
-	password : 'happytedy',
+	password : '',
 	database : 'theater'
 });
 
@@ -68,6 +68,7 @@ app.get("/websloggedin", function(req, res){
 
 var mvname = null
 var mvtime = null
+var hall = null
 
 app.post('/websloggedin',function(req,res){
   mvname=req.body.movie_name;
@@ -75,27 +76,45 @@ app.post('/websloggedin',function(req,res){
   mvtime=req.body.time;
   console.log("time is "+mvtime);
   // res.end("yes");
-  res.render("ticketPurchase", {mvname: mvname, mvtime: mvtime})
+  res.render("ticketPurchase", {mvname: mvname, mvtime: mvtime, hall:hall})
 
 });    
 
 
 app.post("/ticketBuy", function(req, res){
 	// console.log(req);
-	var q = "UPDATE seats as s SET s.seat_available = false WHERE s.seat_id = 1;";
-	
+	console.log(req.body.seat);
+	var str = req.body.seat;
+	var row = parseInt(str.charAt(str.indexOf("row")+4),10)+1;
+	var col = (parseInt(str.charAt(str.indexOf("column")+7)))*5;
+	console.log(row+col);
+	var q = "UPDATE seats as s SET s.seat_available = false WHERE s.seat_id = "+(row+col) +";";
+	connection.query(q, function(err, results){
+		console.log(results);
+	});
+	var a = "SELECT user_id FROM users WHERE username = "+ +";";
 	var q = "INSERT INTO tickets (user_id, type_id, show_id,seat_id) VALUES ('" + req.body.user_id + "','"+ req.body.type_id +"','" +req.body.show_id+"','" +req.body.seat_id +"');"
 
 	connection.query(q, function(err, results){
-	 	console.log(results);
-	 });
+		console.log(results);
+	});
+	// connection.query(q, function(err, results){
+	//  	console.log(results);
+	//  });
 
 	res.redirect("/")
 });
 
 app.get("/ticketPurchase", function(req, res){
 	console.log('second page');
-	res.render("ticketPurchase", {mvname: mvname, mvtime: mvtime})
+	
+	var q = "SELECT m.movie_title,s.show_time, s.hall_id FROM movies as m INNER JOIN shows as s ON m.movie_id = s.movie_id INNER JOIN ticket_type as t WHERE s.show_time = '2018-05-20 10:00:00';"		
+	connection.query(q, function(err, results){
+		console.log(results);
+		hall = results[0].hall_id;
+		res.render("ticketPurchase", {mvname: mvname, mvtime: mvtime, hall:hall})
+	});
+	
 	 // res.render("ticketPurchase")
 });
 

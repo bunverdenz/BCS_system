@@ -39,26 +39,17 @@
                 <div id="screen">            
                 </div>
         </div>
-        <form method = "POST" action = "/ticketBuy"></form>
+        <form method = "POST" action = "/ticketBuy">
             <div class="right">
                 <h3>
                   Details
                 </h3>
                 <div>
-                  Time:
-                  <label>
-                    <input id="time" placeholder="time" name="time">            
-                  </label>
+                  Time: <%=mvtime%>                  
                   <br></br>
-                  Hall:
-                  <label>
-                    <input id="hall" placeholder="hall" name="hall">            
-                  </label>
+                  Hall: <%=hall%>
                   <br></br>
-                  Movie Name:
-                  <label>
-                    <input id="movie" placeholder="movie" name="movie">            
-                  </label>
+                  Movie Name: <%=mvname%>                 
                   <br></br>
                   Seat:
                   <label>

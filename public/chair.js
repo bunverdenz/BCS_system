@@ -28,23 +28,30 @@ $('.menu .browse')
   })
 ;
 $("#price").val(0);
+$("#seat").val('');
 var myChair = document.getElementById("myChair");
 
-function clickfunc(obj,id){
-  var old = parseInt($('#price').val(), 10);  
+function clickfunc(obj,id1){
+  var old = parseInt($('#price').val(), 10); 
+  var oldSeat = $('#seat').val();
+  console.log(obj);
+  console.log(id1.getAttribute('id'));
     if(obj.id =='adult'){      
-      var k = parseInt("10000");
+      var k = parseInt("11000");
       $("#price").val(k+old);
+      $("#seat").val("Adult row:"+id1.getAttribute('id').charAt(3)+" column:"+id1.getAttribute('id').charAt(8)+"\n"+oldSeat);
     }
     else if(obj.id =='student'){
       var k = parseInt("8000");
       $("#price").val(k+old);
+      $("#seat").val("Student row:"+id1.getAttribute('id').charAt(3)+" column:"+id1.getAttribute('id').charAt(8)+"\n"+oldSeat);
     }
     else if(obj.id =='child'){
-      var k = parseInt("6000");
+      var k = parseInt("5000");
       $("#price").val(k+old);
+      $("#seat").val("Child row:"+id1.getAttribute('id').charAt(3)+" column:"+id1.getAttribute('id').charAt(8)+"\n"+oldSeat);
     }
-    $(id).addClass("greenBorder");
+    $(id1).addClass("greenBorder");
     console.log("hey");
   // $("#container").html(result);
 }
@@ -67,7 +74,7 @@ for(var i=0;i<5;i++){
           "<div class='ui three column divided center aligned grid'>"+
             "<div class='column'>"+
               "<h4 class='ui header'>Adult</h4>"+
-              "<p>10,000 ₩ per person</p>"+
+              "<p>11,000 ₩ per person</p>"+
               "<div id= 'adult' class='ui button' class = 'cart' onclick='clickfunc(this, "+str1+")'>Add</div>"+
             "</div>"+
             "<div class='column'>"+
