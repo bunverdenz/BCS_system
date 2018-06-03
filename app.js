@@ -25,18 +25,14 @@ var connection = mysql.createConnection({
 app.get("/", function(req, res){
 	console.log('first page');
 
-	var q = "SELECT*FROM movies;";
-	 connection.query(q, function(err, results){
-	 	
-		 //var num = results[0].count;
-
-	
+	var q = "SELECT m.movie_title, m.image_url, m.duration, s.show_time, t.type_demo, t.price FROM movies as m INNER JOIN shows as s ON m.movie_id = s.movie_id INNER JOIN ticket_type as t;";
+	 connection.query(q, function(err, result){
 		if (err) throw err;
-	// 	//var count = results[0].count;
-	// 	//need to be inside. If it is outside then 
-	// 	//it may call res.send(..) before get count
-	// 	//res.send("We have " + count + " users in our db.");
-		res.render("webs", {data: results});
+		var q = "SELECT*FROM movies;";
+	 	connection.query(q, function(err, results){
+			if (err) throw err;
+			res.render("webs", {data: results, average :aver});
+	 });
 	 });
 	 
 });
@@ -51,19 +47,34 @@ app.post('/websloggedin1',function(req,res){
   var q = "SELECT user_id FROM users WHERE username = '"+ user_login +"';";
 	connection.query(q, function(err, results){
 	console.log(results)
-	var q1 = "INSERT INTO stars( user_id, movie_id, rating) VALUES (1, 1, 5);";
-	// connection.query(q1, function(err, results1){
-	// 	if (err) throw err;
-	//  });	
+	var q1 = "INSERT INTO stars(user_id, movie_id, rating) VALUES ("+results[0].user_id+","+mvid+","+rank+");";
+	connection.query(q1, function(err, results1){
+		if (err){
+			var q = "UPDATE stars SET rating = "+rank+" WHERE user_id = "+results[0].user_id+" AND movie_id = "+mvid+";"
+		};
+	 });	
 	if (err) throw err;
-	res.render("websloggedin", {data: user_login});
+	res.render("websloggedin", {data: user_login, average :aver});
 	 });
   
 });  
 
+var aver = null
 app.get("/websloggedin", function(req, res){
 	console.log('second page');
-	res.render("websloggedin", {data: user_login});
+	var q1 = "SELECT movie_id, AVG(rating) FROM stars GROUP BY movie_id;";
+	connection.query(q1, function(err, results1){
+		console.log(results1)
+		if (err) throw err;
+		var arrayLength = results1.length;
+		for (var i = 0; i < arrayLength; i++) {
+		    results1[i].AVG(rating) = Math.round( results1[i].AVG(rating) * 10 ) / 10;
+		    //Do something
+		}
+		aver = results1
+		console.log(aver)
+		res.render("websloggedin", {data: user_login, average :aver});
+	 });	
 });
 
 var mvname = null
