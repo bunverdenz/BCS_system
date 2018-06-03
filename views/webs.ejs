@@ -162,20 +162,23 @@
         <i class ="login close icon"></i>
 
   <p>Please, log in.</p>
-  
-  <div class="field">
-    <label>Username</label>
-    <input placeholder="Username" name="username" type="text">
-  </div>
-  <div class="field">
-    <label>Password</label>
-    <input placeholder="Password" type="password" name="password">
-  </div>
-  <a id = "signUp" style="cursor: pointer;">Don't have an account?</a><br><br>
-     
- <div class = "ui red login cancel basic button">Cancel</div>
- <div class = "ui green login submit basic button">Login</div>         
- <div class="ui login error message"></div>
+  <form method = "POST" action = "/login"> 
+      <div class="field">
+        <label>Username</label>
+        <input placeholder="Username" name="username" type="text">
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input placeholder="Password" type="password" name="password">
+      </div>
+      <a id = "signUp" style="cursor: pointer;">Don't have an account?</a><br><br>
+        
+      <div>
+        <div ><button class = "ui green login submit basic button">Login</button></div>
+        <div ><button class = "ui red login cancel basic button">Cancel</button></div>  
+      </div>
+  </form>         
+    <div class="ui login error message"></div>
 
 
   <div class="ui signup modal form segment">

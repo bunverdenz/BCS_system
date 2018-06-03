@@ -14,7 +14,7 @@ app.set("view engine","ejs");
 var connection = mysql.createConnection({
 	host : 'localhost',
 	user : 'root',
-	password : 'chi1758910',
+	password : '',
 	database : 'theater'
 });
 
@@ -26,7 +26,9 @@ app.get("/", function(req, res){
 	var q = "SELECT COUNT(*) as count FROM users;";
 	 connection.query(q, function(err, results){
 	 	console.log(results[0].count);
-	 	var num = results[0].count;
+		 var num = results[0].count;
+
+	
 	// 	if (err) throw err;
 	// 	//var count = results[0].count;
 	// 	//need to be inside. If it is outside then 
@@ -34,13 +36,43 @@ app.get("/", function(req, res){
 	// 	//res.send("We have " + count + " users in our db.");
 		res.render("webs", {data: num});
 	 });
-
+	 
 });
 app.get("/select_seat", function(req, res){
 	console.log('select_seat');
 	var joke = "<em>select_seat</em>"
 	res.render("ticketPurchase");
 
+});
+
+app.post("/login", function(req, res){
+	console.log("heyyyyyyy");
+	var body = req.body;
+	
+	var q = "SELECT * FROM users;"
+	 connection.query(q, function(err, results){
+		console.log(results[0].username);
+		var rows = results;	  
+		var chk = false; 
+		rows.forEach( (row) => {
+			if(row.username == body.username && row.password == body.password){
+				console.log("FOUND it!");
+				chk = true;
+			}
+			
+		  });
+		if(chk==true){
+			console.log("Successfully login");
+			// alert("Successfully login");
+		}
+		else{
+			console.log("Login Fail, not in database");
+			// alert("Login Fail, not in database");
+		}
+	});
+
+
+	res.redirect("/")
 });
 
 app.post("/register", function(req, res){
@@ -56,7 +88,7 @@ app.post("/register", function(req, res){
 
 	//fake input
 	// var q = "INSERT INTO users (username, user_password, user_email) VALUES ('" + faker.internet.userName() + "','"+ faker.internet.password() +"','" +faker.internet.email() +"');"
-	console.log(q)
+	// console.log(q)
 
 	connection.query(q, function(err, results){
 	 	console.log(results);
