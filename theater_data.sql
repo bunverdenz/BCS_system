@@ -42,11 +42,7 @@ INSERT INTO movies(movie_title, image_url, duration)
 VALUES("Peter Rabbit",
 		"https://d32qys9a6wm9no.cloudfront.net/images/movies/poster/c0/8f35257aec34e35b86b840153f49b77e_300x442.jpg",
         94);
-INSERT INTO movies(movie_title, image_url, duration)
-VALUES("Early Man",
-		"https://d32qys9a6wm9no.cloudfront.net/images/movies/poster/99/441503dc69c52ce948bf305ff6972bad_300x442.jpg",
-        89);
-        
+
 
 
 #eaxample data for hall
@@ -129,8 +125,18 @@ INSERT INTO ticket_type( type_demo, price) VALUES ("Student", 10000);
 
 
 #example data for the show
-INSERT INTO shows(movie_id, hall_id, show_time) VALUES (1,1, STR_TO_DATE("2018,5,20 10,30,00", "%Y,%m,%d %h,%i,%s"));
-INSERT INTO shows(movie_id, hall_id, show_time) VALUES (2,2, STR_TO_DATE("2018,5,20 10,30,00", "%Y,%m,%d %h,%i,%s"));
+INSERT INTO shows(movie_id, hall_id, show_time) VALUES (1,1, STR_TO_DATE("2018,5,20 10,00,00", "%Y,%m,%d %h,%i,%s"));
+INSERT INTO shows(movie_id, hall_id, show_time) VALUES (1,1, STR_TO_DATE("2018,5,20 12,30,00", "%Y,%m,%d %h,%i,%s"));
+INSERT INTO shows(movie_id, hall_id, show_time) VALUES (2,1, STR_TO_DATE("2018,5,20 15,00,00", "%Y,%m,%d %h,%i,%s"));
+INSERT INTO shows(movie_id, hall_id, show_time) VALUES (2,1, STR_TO_DATE("2018,5,20 17,30,00", "%Y,%m,%d %h,%i,%s"));
+INSERT INTO shows(movie_id, hall_id, show_time) VALUES (3,1, STR_TO_DATE("2018,5,20 20,00,00", "%Y,%m,%d %h,%i,%s"));
+INSERT INTO shows(movie_id, hall_id, show_time) VALUES (3,2, STR_TO_DATE("2018,5,20 09,00,00", "%Y,%m,%d %h,%i,%s"));
+INSERT INTO shows(movie_id, hall_id, show_time) VALUES (4,2, STR_TO_DATE("2018,5,20 11,30,00", "%Y,%m,%d %h,%i,%s"));
+INSERT INTO shows(movie_id, hall_id, show_time) VALUES (4,2, STR_TO_DATE("2018,5,20 14,00,00", "%Y,%m,%d %h,%i,%s"));
+INSERT INTO shows(movie_id, hall_id, show_time) VALUES (5,2, STR_TO_DATE("2018,5,20 16,30,00", "%Y,%m,%d %h,%i,%s"));
+INSERT INTO shows(movie_id, hall_id, show_time) VALUES (5,2, STR_TO_DATE("2018,5,20 19,30,00", "%Y,%m,%d %h,%i,%s"));
+
+
 
 #example data for the tickets
 INSERT INTO tickets( user_id, type_id, show_id,seat_id) 
