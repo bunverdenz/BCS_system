@@ -58,8 +58,7 @@ app.post('/websloggedin1',function(req,res){
   var q = "SELECT user_id FROM users WHERE username = '"+ user_login +"';";
 	connection.query(q, function(err, results){
 	console.log(results)
-	var q1 = "SELECT * FROM stars WHERE user_id ="+ 7 +" AND movie_id = "+ 1 +";";
-	// var q1 = "SELECT * FROM stars WHERE user_id ="+ results[0].user_id +" AND movie_id = "+ mvid +";";
+	var q1 = "SELECT * FROM stars WHERE user_id ="+ results[0].user_id +" AND movie_id = "+ mvid +";";
 	console.log(q1)
 	
 	connection.query(q1, function(err, results1){
