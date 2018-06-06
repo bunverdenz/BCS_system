@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 var connection = mysql.createConnection({
 	host : 'localhost',
 	user : 'root',
-	password : 'chi1758910',
+	password : 'happytedy',
 	database : 'theater'
 });
 
@@ -30,12 +30,23 @@ app.get("/", function(req, res){
 		if (err) throw err;
 		var q = "SELECT*FROM movies;";
 	 	connection.query(q, function(err, results){
+		 	var q1 = "SELECT movie_id, AVG(rating) as avg FROM stars GROUP BY movie_id;";
+		    connection.query(q1, function(err, results1){
+			console.log(results1)
+			if (err) throw err;
+			var arrayLength = results1.length;
+			for (var i = 0; i < arrayLength; i++) {
+			    results1[i].avg = Math.round( results1[i].avg * 10 ) / 10;
+			    //Do something
+			}
+			console.log(results1)
+			aver = results1
 			if (err) throw err;
 			res.render("webs", {data: results, average :aver});
 	 });
 	 });
 	 
-});
+})})
 
 // @Shynar
 app.post('/websloggedin1',function(req,res){
@@ -47,28 +58,63 @@ app.post('/websloggedin1',function(req,res){
   var q = "SELECT user_id FROM users WHERE username = '"+ user_login +"';";
 	connection.query(q, function(err, results){
 	console.log(results)
-	var q1 = "INSERT INTO stars(user_id, movie_id, rating) VALUES ("+results[0].user_id+","+mvid+","+rank+");";
+	var q1 = "SELECT * FROM stars WHERE user_id ="+ 7 +" AND movie_id = "+ 1 +";";
+	// var q1 = "SELECT * FROM stars WHERE user_id ="+ results[0].user_id +" AND movie_id = "+ mvid +";";
+	console.log(q1)
+	
 	connection.query(q1, function(err, results1){
-		if (err){
-			var q = "UPDATE stars SET rating = "+rank+" WHERE user_id = "+results[0].user_id+" AND movie_id = "+mvid+";"
-		};
-	 });	
+		var z = 0
+		if (results1.length > 0){
+			var z = "UPDATE stars SET rating = "+rank+" WHERE user_id = "+results[0].user_id+" AND movie_id = "+mvid+";"
+		}else{
+			var z = "INSERT INTO stars(user_id, movie_id, rating) VALUES ("+results[0].user_id+","+mvid+","+rank+");";
+		}
+		    connection.query(z, function(err, result){
+			    var q2 = "SELECT movie_id, AVG(rating) as avg FROM stars GROUP BY movie_id;";
+			    connection.query(q2, function(err, results1){
+				console.log(results1)
+				if (err) throw err;
+				var arrayLength = results1.length;
+				for (var i = 0; i < arrayLength; i++) {
+				    results1[i].avg = Math.round( results1[i].avg * 10 ) / 10;
+				    //Do something
+				}
+				aver = results1
+				res.render("websloggedin", {data: user_login, average :aver});
+		 });
+	 })	
 	if (err) throw err;
-	res.render("websloggedin", {data: user_login, average :aver});
+	// 	if (err){
+	// 		var q = "UPDATE stars SET rating = "+rank+" WHERE user_id = "+results[0].user_id+" AND movie_id = "+mvid+";"
+	// 	};
+	// 	var q2 = "SELECT movie_id, AVG(rating) as avg FROM stars GROUP BY movie_id;";
+	// 	    connection.query(q2, function(err, results1){
+	// 		console.log(results1)
+	// 		if (err) throw err;
+	// 		var arrayLength = results1.length;
+	// 		for (var i = 0; i < arrayLength; i++) {
+	// 		    results1[i].avg = Math.round( results1[i].avg * 10 ) / 10;
+	// 		    //Do something
+	// 		}
+	// 		aver = results1
+	// 		res.render("websloggedin", {data: user_login, average :aver});
+	//  });	
+	// if (err) throw err;
+	
 	 });
   
-});  
+}) })
 
 var aver = null
 app.get("/websloggedin", function(req, res){
 	console.log('second page');
-	var q1 = "SELECT movie_id, AVG(rating) FROM stars GROUP BY movie_id;";
+	var q1 = "SELECT movie_id, AVG(rating) as avg FROM stars GROUP BY movie_id;";
 	connection.query(q1, function(err, results1){
 		console.log(results1)
 		if (err) throw err;
 		var arrayLength = results1.length;
 		for (var i = 0; i < arrayLength; i++) {
-		    results1[i].AVG(rating) = Math.round( results1[i].AVG(rating) * 10 ) / 10;
+		    results1[i].avg = Math.round( results1[i].avg * 10 ) / 10;
 		    //Do something
 		}
 		aver = results1
@@ -173,9 +219,19 @@ app.post("/login", function(req, res){
 		  });
 		if(chk==true){
 			console.log("Successfully login");
-			res.render("websloggedin",{data:user_login});
+			var q1 = "SELECT movie_id, AVG(rating) as avg FROM stars GROUP BY movie_id;";
+		    connection.query(q1, function(err, results1){
+			console.log(results1)
+			if (err) throw err;
+			var arrayLength = results1.length;
+			for (var i = 0; i < arrayLength; i++) {
+			    results1[i].avg = Math.round( results1[i].avg * 10 ) / 10;
+			    //Do something
+			}
+			aver = results1
+			res.render("websloggedin",{data:user_login, average :aver});
 			// alert("Successfully login");
-		}
+		})}
 		else{
 			console.log("Login Fail, not in database");
 			// alert("Login Fail, not in database");
