@@ -32,7 +32,7 @@ app.get("/", function(req, res){
 	 	connection.query(q, function(err, results){
 		 	var q1 = "SELECT movie_id, AVG(rating) as avg FROM stars GROUP BY movie_id;";
 		    connection.query(q1, function(err, results1){
-			console.log(results1)
+		    	console.log(results1)
 			if (err) throw err;
 			var arrayLength = results1.length;
 			for (var i = 0; i < arrayLength; i++) {
@@ -42,12 +42,21 @@ app.get("/", function(req, res){
 			console.log(results1)
 			aver = results1
 			if (err) throw err;
-			res.render("webs", {data: results, average :aver});
+		    var q2 ="SELECT * FROM movies as m WHERE m.movie_id NOT IN (SELECT s.movie_id FROM shows as s) ;"
+		    connection.query(q2, function(err, results2){
+		    	soonn = results2[0].movie_title
+		    	soonimg = results2[0].image_url
+		    	soont = results2[0].duration
+		    	res.render("webs", {data: results, average :aver, n: soonn, im: soonimg, t: soont});
+		    })
 	 });
 	 });
 	 
 })})
 
+var soonn = null
+var soonimg = null
+var soont = null
 // @Shynar
 app.post('/websloggedin1',function(req,res){
   var rank=req.body.rating;
@@ -79,7 +88,7 @@ app.post('/websloggedin1',function(req,res){
 				    //Do something
 				}
 				aver = results1
-				res.render("websloggedin", {data: user_login, average :aver});
+				res.render("websloggedin", {data: user_login, average :aver, n: soonn, im: soonimg, t: soont});
 		 });
 	 })	
 	if (err) throw err;
@@ -118,7 +127,7 @@ app.get("/websloggedin", function(req, res){
 		}
 		aver = results1
 		console.log(aver)
-		res.render("websloggedin", {data: user_login, average :aver});
+		res.render("websloggedin", {data: user_login, average :aver, n: soonn, im: soonimg, t: soont});
 	 });	
 });
 
@@ -228,7 +237,7 @@ app.post("/login", function(req, res){
 			    //Do something
 			}
 			aver = results1
-			res.render("websloggedin",{data:user_login, average :aver});
+			res.render("websloggedin",{data:user_login, average :aver, n: soonn, im: soonimg, t: soont});
 			// alert("Successfully login");
 		})}
 		else{
