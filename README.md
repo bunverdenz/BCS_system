@@ -24,6 +24,12 @@ This is cinema website implementation. We use node.js with SQL on server side. I
 
 ## Sample Interface
 
+![alt text](https://raw.githubusercontent.com/bunverdenz/BCS_system/master/landing_page.png)
+![alt text](https://raw.githubusercontent.com/bunverdenz/BCS_system/master/login.png)
+![alt text](https://raw.githubusercontent.com/bunverdenz/BCS_system/master/buy_ticket.png)
+
 
 ## Data Schema
+
+![alt text](https://raw.githubusercontent.com/bunverdenz/BCS_system/master/schema.png)
 
