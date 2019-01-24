@@ -15,3 +15,15 @@ This is cinema website implementation. We use node.js with SQL on server side. I
 * This project is implemented with Node.js, Jquery and JavaScript along with [semantic-ui]https://semantic-ui.com/ stylesheet. All the JavaScript file can be found in `view/`, `version with ratings/` and in `public/` folder, and main `.ejs` files are put in `views/`. Main connection between Node.js and mySQL are all put in `/app.js`
 * The backend/database controls are kept in `.sql` files. Main dummy data generation are in `theater_data.sql`, and connection between each tables are in `theater_schema.sql`
 * Other subfolders are used to keep the file implemented in the use of third-party libraries, such as node-modules and jquery
+
+
+## How to run
+* Clone the repository
+* `npm install`
+* `npm start`
+
+## Sample Interface
+
+
+## Data Schema
+
