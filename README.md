@@ -19,8 +19,9 @@ This is cinema website implementation. We use node.js with SQL on server side. I
 
 ## How to run
 * Clone the repository
-* `npm install`
-* `npm start`
+* Create your local mySQL server using [Workbench](https://dev.mysql.com/doc/workbench/en/wb-getting-started-tutorial-creating-a-model.html) Add dummy data, create data schema as shown in figture below
+* `npm install` (or you can use `npm ci` to just update from the current version)
+* `node app.js`
 
 ## Sample Interface
 
